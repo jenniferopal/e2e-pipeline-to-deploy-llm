@@ -5,7 +5,7 @@ app = FastAPI()
 
 # Loading the model and the tokeniser 
 
-model_name = "" 
+model_name = "unsloth/Qwen-AgentWorld-35B-A3B-GGUF" 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
@@ -18,4 +18,3 @@ async def generate_text(prompt: str):
         return {"generated_text": generated_text}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    
