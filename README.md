@@ -1,26 +1,26 @@
-# e2e-pipeline-to-deploy-llm
 # End-to-End LLM Pipeline on AWS EKS
 
-## 🚀 Project Overview
+## Project Overview
 
 This project demonstrates a fully automated CI/CD pipeline for deploying a Large Language Model (LLM) application.
 
 It includes:
+
     1. **FastAPI** app serving a pre-trained model (GPT-2).
-    2. **Docker** containerization.
+    2. **Docker** containerisation.
     3. **Kubernetes (EKS)** orchestration on AWS.
     4. Auto-scaling and Load Balancing capabilities.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
     - Python, FastAPI, Hugging Face Transformers
     - Docker
     - Kubernetes (AWS EKS)
     - AWS Load Balancer Service
 
-## 🏗️ Architecture Diagram
+## Architecture Diagram
 
-*(Here is where you will take a screenshot of your `kubectl get svc` output or draw a simple diagram)*
+*(screenshot of `kubectl get svc` output to be added)*
 
 1. User Request -> AWS Load Balancer -> K8s Service -> Pods -> LLM Model
 
@@ -47,6 +47,8 @@ Prerequisites
 
  `eksctl create cluster --name my-cluster --region eu-west-1`
 
+ ![image](/images/llm-app-cluster-1.png)
+
 2. Update Kubeconfig:
 
  `aws eks update-kubeconfig --name my-cluster`
@@ -59,5 +61,10 @@ Prerequisites
 
 For horizontal scaling:
 
-    `kubectl scale deployment llm-app-deployment --replicas=3`
+```bash
+kubectl scale deployment llm-app-deployment --replicas=3
+```
 
+ ![image](/images/eks_cluster_stack.png)
+
+## Part 2 of Project Coming Soon 
